@@ -1,12 +1,11 @@
 'use client';
 
-import { Navbar, Project } from "@/components";
+import { Navbar, Project, Fade } from "@/components";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { motion } from "framer-motion";
 
 import myPic from '../public/myPic.png';
 import ecommerce from '../public/ecommerce.png';
@@ -70,10 +69,10 @@ export default function Home() {
       description: 'Portfolio personal en el que expongo mis proyectos de desarrollo web.',
       image: portfolio,
       link: 'https://online-shop-five-alpha.vercel.app/',
-      page: 'https://github.com/CronoCode120/personal-portfolio',
+      page: 'https://github.com/CronoCode120/portfolio',
       usedTechs: ['Next.js', 'TailwindCSS']
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen md:mr-[70px] md:ml-[30px] lg:mx-[15vw]">
@@ -90,10 +89,12 @@ export default function Home() {
           <span id="typedText2"></span>
           <span id="typeLine" className="text-white">|</span>
         </p>
-        <div className="text-gray-400 mt-10">
-          <Link href={'https://www.linkedin.com/in/cristobal-tavera/'} target="_blank" title="Mi perfil de Linkedin" className="hover:text-cyan-300 cursor-pointer"><FontAwesomeIcon icon={faLinkedin} size="2xl"/></Link>
-          <Link href={'https://github.com/CronoCode120'} target="_blank" title="Mi perfil de Github" className="hover:text-cyan-300 cursor-pointer ml-6"><FontAwesomeIcon icon={faGithub} size="2xl"/></Link>
-        </div>
+        <Fade>
+          <div className="text-gray-400 mt-10">
+            <Link href={'https://www.linkedin.com/in/cristobal-tavera/'} target="_blank" title="Mi perfil de Linkedin" className="hover:text-cyan-300 cursor-pointer"><FontAwesomeIcon icon={faLinkedin} size="2xl"/></Link>
+            <Link href={'https://github.com/CronoCode120'} target="_blank" title="Mi perfil de Github" className="hover:text-cyan-300 cursor-pointer ml-6"><FontAwesomeIcon icon={faGithub} size="2xl"/></Link>
+          </div>
+        </Fade>
       </header>
       <section id="about" className="ml-6 md:ml-0 mt-12 md:flex md:justify-evenly md:items-center">
         <div className="md:w-full flex flex-col justify-center items-start">
