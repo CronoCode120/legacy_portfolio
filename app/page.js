@@ -1,113 +1,149 @@
-import Image from 'next/image'
+'use client';
+
+import { Navbar, Project } from "@/components";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { motion } from "framer-motion";
+
+import myPic from '../public/myPic.png';
+import ecommerce from '../public/ecommerce.png';
+import portfolio from '../public/portfolio.png';
 
 export default function Home() {
+
+  const [dots, setDots] = useState('');
+
+  let i = 0;
+  const textToType = 'Construyo aplicaciones web accesibles y rápidas que procuren una experiencia óptima al usuario.';
+
+  useEffect(() => {
+    const span1 = document.getElementById('typedText1');
+    const highlightTxt = document.getElementById('highlightTxt');
+    const span2 = document.getElementById('typedText2');
+
+    const typeText = () => {
+      if(i < textToType.length) {
+        if(i < 10) {
+          span1.innerHTML += textToType.charAt(i);
+        } else if(i >= 10 && i <= 25) {
+          highlightTxt.innerHTML += textToType.charAt(i);
+        } else {
+          span2.innerHTML += textToType.charAt(i);
+        }
+        i++;
+        setTimeout(typeText, 70);
+      } else {
+        document.getElementById('typeLine').classList.add('blink');
+      }
+    }
+
+    const intervalId = setInterval(() => {
+      setDots(prevDots => {
+        if(prevDots === '...') return '';
+        if(prevDots === '..') return '...';
+        if(prevDots === '.') return '..';
+        if(prevDots === '') return '.';
+      });
+    }, 500)
+
+    typeText();
+
+    return () => {
+      clearInterval(intervalId);
+    }
+  }, []);
+
+  const projectsData = [
+    {
+      title: 'Immerse (e-commerce)',
+      description: 'Tienda online ficticia en la que puedes explorar productos, ver sus detalles, añadirlos al carrito e incluso comprarlos.',
+      image: ecommerce,
+      link: 'https://online-shop-five-alpha.vercel.app/',
+      page: 'https://github.com/CronoCode120/online-shop',
+      usedTechs: ['Next.js', 'CSS', 'Sanity', 'Stripe']
+    },
+    {
+      title: 'Mi portfolio',
+      description: 'Portfolio personal en el que expongo mis proyectos de desarrollo web.',
+      image: portfolio,
+      link: 'https://online-shop-five-alpha.vercel.app/',
+      page: 'https://github.com/CronoCode120/personal-portfolio',
+      usedTechs: ['Next.js', 'TailwindCSS']
+    },
+  ]
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="min-h-screen md:mr-[70px] md:ml-[30px] lg:mx-[15vw]">
+      <header id="home" className="flex flex-col justify-center items-start h-screen ml-10">
+        <div className="absolute bg-gradient-to-br from-cyan-500 from-[55%] to-transparent to-[86%] w-[1000px] h-[600px] rounded-[100%] top-0 left-0 translate-y-[-60%] translate-x-[-50%] lg:translate-x-[-40%]"></div>
+        <div className="absolute bg-gradient-to-br from-cyan-300 to-transparent to-[75%] w-[1500px] lg:w-[150vw] h-[600px] lg:h-[700px] rounded-[100%] top-0 right-0 translate-y-[-52%] translate-x-[75%] md:translate-x-[60%] lg:translate-x-[50%] lg:h-[700px]"></div>
+        <div className="mb-6 relative z-20">
+          <h1 className="text-6xl font-bold bg-gradient-to-r from-cyan-500 to-cyan-200 to-[60%] w-[340px] text-transparent bg-clip-text font-comfortaa">Cristóbal Tavera</h1>
         </div>
-      </div>
+        <h2 className="text-xl mb-10 font-roboto text-gray-100 px-4 rounded-full border border-cyan-300 hover:text-gray-950 hover:bg-cyan-300 hover:border-cyan-400 transition-all duration-200">Desarrollador Front End</h2>
+        <p className="w-[60%] lg:w-full text-gray-300 h-[100px] md:h-[50px] xl:h-[20px] font-comfortaa">
+          <span id="typedText1"></span>
+          <span id="highlightTxt" className="font-semibold bg-gradient-to-r from-cyan-500 to-cyan-200 text-transparent bg-clip-text"></span>
+          <span id="typedText2"></span>
+          <span id="typeLine" className="text-white">|</span>
+        </p>
+        <div className="text-gray-400 mt-10">
+          <Link href={'https://www.linkedin.com/in/cristobal-tavera/'} target="_blank" title="Mi perfil de Linkedin" className="hover:text-cyan-300 cursor-pointer"><FontAwesomeIcon icon={faLinkedin} size="2xl"/></Link>
+          <Link href={'https://github.com/CronoCode120'} target="_blank" title="Mi perfil de Github" className="hover:text-cyan-300 cursor-pointer ml-6"><FontAwesomeIcon icon={faGithub} size="2xl"/></Link>
+        </div>
+      </header>
+      <section id="about" className="ml-6 md:ml-0 mt-12 md:flex md:justify-evenly md:items-center">
+        <div className="md:w-full flex flex-col justify-center items-start">
+          <h3 className="mb-6 font-semibold text-xl before:content-['<h3>'] before:text-cyan-400 after:content-['</h3>'] after:text-cyan-400 font-roboto w-fit">¿Quién soy?</h3>
+          <div className="w-[80%] md:w-full md:flex md:items-start md:justify-center">
+            <div className="mb-6 text-gray-300 font-comfortaa md:mr-10">
+              <p className="mb-2 leading-7">Soy un desarrollador web autodidacta que lleva desde finales de 2022 en el mundo de la programación. A pesar de que es el reto más difícil que he afrontado, desde entonces mis ganas de seguir aprendiendo y convertirme en un mejor programador me han llevado a cultivar estos conocimientos cada día.</p>
+              <p className="mb-2 leading-7">Quiero hacer de esto una profesión cuanto antes para impulsar el desarrollo de mis habilidades y mejorar la calidad de mi trabajo.</p>
+              <p className="leading-7">Hasta que eso ocurra, mi principal objetivo es trabajar diariamente en páginas web que muestren el valor que puedo ofrecer como programador.</p>
+            </div>
+            <div className="md:w-[45%] flex flex-col justify-center items-center">
+              <Image src={myPic} alt="Este soy yo" className="relative border w-[280px] h-[280px] mb-6 aspect-square lg:w-[350px] lg:h-[350px] rounded-2xl bg-white z-20 before:w-full before:h-full before:bg-blue-500 before:absolute before:rounded-2xl before:top-0 before:left-0 before:rotate-[10deg] before:z-[-10]"/>
+              <div className="bg-black border border-cyan-300 rounded-2xl p-5 w-[280px] lg:w-[350px] shadow-2xl shadow-cyan-500">
+                <h4 className="font-bold text-lg bg-gradient-to-r from-cyan-400 to-cyan-200 text-transparent bg-clip-text mb-4 font-comfortaa">Tecnologías aprendidas</h4>
+                <div className="flex justify-between items-center ml-4 text-sm leading-7 font-roboto">
+                  <ul className="list-disc">
+                    <li>HTML/CSS</li>
+                    <li>JavaScript</li>
+                    <li>NodeJS</li>
+                  </ul>
+                  <ul className="list-disc">
+                    <li>React</li>
+                    <li>TailwindCSS</li>
+                    <li>Next.js</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <section id="projects" className="mt-[125px] ml-6 md:ml-0">
+        <h3 className="mt-8 mb-4 font-semibold text-xl before:content-['<h3>'] before:text-cyan-400 after:content-['</h3>'] after:text-cyan-400 font-roboto w-fit">Mis proyectos</h3>
+        <div>
+          {projectsData.map(({ title, description, image, link, page, usedTechs }) => 
+            <Project key={title} title={title} description={description} image={image} link={link} page={page} usedTechs={usedTechs}/>
+          )}
+          <div className="p-5 w-[350px] max-w-[840px] md:w-full rounded-2xl bg-black border border-cyan-300 shadow-2xl shadow-cyan-500">
+            <h3 className="font-bold text-lg bg-gradient-to-r from-cyan-500 to-cyan-200 text-transparent bg-clip-text mb-4 font-comfortaa">En desarrollo<span>{dots}</span></h3>
+            <p className="mb-2 font-roboto">Aplicación CRUD similar a una red social donde los usuarios pueden registrarse, crear publicaciones, editar su perfil y reaccionar al contenido de otras personas.</p>
+          </div>
+        </div>
+      </section>
+      <section id="contact" className="mt-16 ml-6 md:ml-0 w-[75%] md:w-full flex flex-col justify-center items-center mb-20 h-[500px]">
+        <h3 className="mt-8 mb-4 font-semibold text-xl before:content-['<h3>'] before:text-cyan-400 after:content-['</h3>'] after:text-cyan-400 font-roboto w-fit">Contacta conmigo</h3>
+        <p className="max-w-[800px] text-center leading-7 text-gray-300 font-comfortaa">Estoy buscando oportunidades para empezar a trabajar y desarrollarme como programador. Si quieres proponerme algo o simplemente saludar, aquí puedes hacerlo.</p>
+        <a href='mailto:ctaverafernandez@gmail.com' className="border border-cyan-300 inline-block p-4 mt-12 mb-4 rounded-md text-cyan-300 hover:translate-y-[-5px] shadow-xl shadow-cyan-500 lg:shadow-none lg:hover:shadow-2xl lg:hover:shadow-cyan-500 transition-all duration-300 font-roboto">Envíame un mensaje</a>
+      </section>
+      <Navbar/>
+    </div>
   )
 }
