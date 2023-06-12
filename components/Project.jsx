@@ -31,7 +31,7 @@ const Project = ({ title, description, image, link, page, usedTechs }) => {
             ))}
           </div>
         </div>
-        <Link href={page} className="mr-4 ml-auto flex justify-end">
+        <Link href={page} target='_blank' className="mr-4 ml-auto flex justify-end">
           <span className="hover:text-cyan-300 transition-all duration-200">Ver repositorio <FontAwesomeIcon icon={faArrowRight}/></span>
         </Link>
       </div> 
