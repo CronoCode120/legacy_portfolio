@@ -12,6 +12,7 @@ body {
     padding: 0;
     color: white;
     background-color: rgb(0, 12, 14);
+    overflow-x: hidden;
 }
 
 @keyframes blink{
