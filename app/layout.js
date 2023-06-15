@@ -37,9 +37,9 @@ export default function RootLayout({ children }) {
     <html lang="es" className={`${quicksand.variable} ${roboto_mono.variable} ${comfortaa.variable}`}>
       <body>
         {children}
-        <footer className='w-full flex justify-center items-start'>
-          <span className='text-gray-300 font-roboto font-light text-sm text-center mb-4'>Diseñado y programado por Cristóbal Tavera</span>
-          <span className=' ml-2 flex justify-center items-center'>
+        <footer className='w-fit sm:w-full flex justify-center items-center sm:items-start mx-auto flex-col sm:flex-row mb-20'>
+          <span className='text-gray-300 font-roboto font-light text-xs sm:text-sm text-center mb-4'>Diseñado y programado por Cristóbal Tavera</span>
+          <span className='sm:ml-2 flex justify-center items-center'>
             <Link href={'https://www.linkedin.com/in/cristobal-tavera/'} target='_blank' title='Perfil de Linkedin'><FontAwesomeIcon icon={faLinkedin} size='xl'/></Link>
             <Link href={'https://github.com/CronoCode120'} target='_blank' title='Perfil de Github' className='cursor-pointer ml-2'><FontAwesomeIcon icon={faGithub} size='xl'/></Link>
           </span>
