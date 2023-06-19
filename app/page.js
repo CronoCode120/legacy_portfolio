@@ -10,6 +10,7 @@ import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import myPic from '../public/myPic.png';
 import ecommerce from '../public/ecommerce.png';
 import portfolio from '../public/portfolio.png';
+import social from '../public/social.png';
 
 export default function Home() {
 
@@ -63,6 +64,14 @@ export default function Home() {
       link: 'https://online-shop-five-alpha.vercel.app/',
       page: 'https://github.com/CronoCode120/online-shop',
       usedTechs: ['Next.js', 'CSS', 'Sanity', 'Stripe']
+    },
+    {
+      title: 'ThinkShare (red social)',
+      description: 'Aplicación CRUD similar a una red social donde los usuarios pueden registrarse, crear publicaciones, editar su perfil y reaccionar al contenido de otras personas.',
+      image: social,
+      link: 'https://think-share.vercel.app',
+      page: 'https://github.com/CronoCode120/thinkShare',
+      usedTechs: ['Next.js', 'MongoDB', 'REST API\'s', 'TailwindCSS']
     },
     {
       title: 'Mi portfolio',

@@ -23,7 +23,7 @@ const Project = ({ title, description, image, link, page, usedTechs }) => {
       <div className='w-[280px] md:w-[50%] flex flex-col justify-between h-full'>
         <div className='flex flex-col justify-start h-full items-center md:items-start mx-4 sm:mx-0'>
           <p className="w-full mb-2 text-gray-300 max-sm:text-sm">{description}</p>
-          <div className='w-full flex flex-wrap justify-start items-center md:px-0 mb-3 font-roboto'>
+          <div className='w-full flex flex-wrap justify-start items-center md:px-0 font-roboto'>
             {usedTechs.map((tech) => (
               <span key={tech} className=' py-1 px-3 rounded-full text-cyan-300 text-xs sm:text-sm bg-black border-cyan-300 border mr-2 mb-2'>
                 {tech}
