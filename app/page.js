@@ -142,10 +142,10 @@ export default function Home() {
           {projectsData.map(({ title, description, image, link, page, usedTechs }) => 
             <Project key={title} title={title} description={description} image={image} link={link} page={page} usedTechs={usedTechs}/>
           )}
-          <div className="p-5 sm:w-[350px] max-w-[840px] md:w-full rounded-2xl bg-black border border-cyan-300 shadow-2xl shadow-cyan-500">
+          {/* <div className="p-5 sm:w-[350px] max-w-[840px] md:w-full rounded-2xl bg-black border border-cyan-300 shadow-2xl shadow-cyan-500">
             <h3 className="font-bold sm:text-lg bg-gradient-to-r from-cyan-500 to-cyan-200 text-transparent bg-clip-text mb-4 font-comfortaa">En desarrollo<span>{dots}</span></h3>
             <p className="mb-2 font-roboto max-sm:text-sm">Aplicación CRUD similar a una red social donde los usuarios pueden registrarse, crear publicaciones, editar su perfil y reaccionar al contenido de otras personas.</p>
-          </div>
+          </div> */}
         </div>
       </section>
       <section id="contact" className="mt-16 ml-5 sm:ml-6 mr-5 sm:mr-0 md:ml-0 sm:w-[75%] md:w-full flex flex-col justify-center items-center mb-20 h-[500px]">
