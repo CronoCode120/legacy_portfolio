@@ -104,13 +104,14 @@ export default function Home() {
             <Link href={'https://github.com/CronoCode120'} target="_blank" title="Mi perfil de Github" className="hover:text-cyan-300 cursor-pointer ml-6"><FontAwesomeIcon icon={faGithub} size="2xl"/></Link>
           </div>
         </Fade>
+        <a href={'/cv.pdf'} target="_blank"><button type="button" className=" absolute mt-8 bg-cyan-400 text-black max-sm:text-sm font-semibold p-2 rounded-xl font-comfortaa max-sm:shadow-lg max-sm:shadow-cyan-500 hover:shadow-lg hover:shadow-cyan-500 transition-all duration-200 hover:bg-cyan-300">Currículum</button></a>
       </header>
       <section id="about" className="ml-5 sm:ml-6 mr-5 sm:mr-0 md:ml-0 mt-12 md:flex md:justify-evenly md:items-center">
         <div className="md:w-full flex flex-col justify-center items-start">
           <h3 className="w-full text-center sm:text-left sm:w-fit mb-6 font-semibold text-xl sm:text-2xl before:content-['<h3>'] before:text-cyan-400 after:content-['</h3>'] after:text-cyan-400 font-roboto w-fit">¿Quién soy?</h3>
           <div className="sm:w-[80%] md:w-full md:flex md:items-start md:justify-center">
             <div className="mb-6 text-gray-300 font-comfortaa md:mr-10">
-              <p className="mb-2 leading-7 max-sm:text-sm">Soy un desarrollador web autodidacta que lleva desde finales de 2022 en el mundo de la programación. A pesar de que es el reto más difícil que he afrontado, desde entonces mis ganas de seguir aprendiendo y convertirme en un mejor programador me han llevado a cultivar estos conocimientos cada día.</p>
+              <p className="mb-2 leading-7 max-sm:text-sm">Soy un desarrollador web autodidacta con una gran capacidad de aprendizaje. A pesar de que es el reto más difícil que he afrontado, desde entonces mis ganas de seguir instruyéndome y convertirme en un mejor programador me han llevado a cultivar estos conocimientos cada día.</p>
               <p className="mb-2 leading-7 max-sm:text-sm md:text-md">Quiero hacer de esto una profesión cuanto antes para impulsar el desarrollo de mis habilidades y mejorar la calidad de mi trabajo.</p>
               <p className="leading-7 max-sm:text-sm">Hasta que eso ocurra, mi principal objetivo es trabajar diariamente en páginas web que muestren el valor que puedo ofrecer como programador.</p>
             </div>
