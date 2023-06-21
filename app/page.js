@@ -111,7 +111,7 @@ export default function Home() {
           <h3 className="w-full text-center sm:text-left sm:w-fit mb-6 font-semibold text-xl sm:text-2xl before:content-['<h3>'] before:text-cyan-400 after:content-['</h3>'] after:text-cyan-400 font-roboto w-fit">¿Quién soy?</h3>
           <div className="sm:w-[80%] md:w-full md:flex md:items-start md:justify-center">
             <div className="mb-6 text-gray-300 font-comfortaa md:mr-10">
-              <p className="mb-2 leading-7 max-sm:text-sm">Soy un desarrollador web autodidacta con una gran capacidad de aprendizaje. A pesar de que es el reto más difícil que he afrontado, desde entonces mis ganas de seguir instruyéndome y convertirme en un mejor programador me han llevado a cultivar estos conocimientos cada día.</p>
+              <p className="mb-2 leading-7 max-sm:text-sm">Soy un desarrollador web autodidacta con una gran capacidad de aprendizaje. A pesar de que es el reto más difícil que he afrontado, mis ganas de seguir instruyéndome y convertirme en un mejor programador me han llevado a cultivar estos conocimientos cada día.</p>
               <p className="mb-2 leading-7 max-sm:text-sm md:text-md">Quiero hacer de esto una profesión cuanto antes para impulsar el desarrollo de mis habilidades y mejorar la calidad de mi trabajo.</p>
               <p className="leading-7 max-sm:text-sm">Hasta que eso ocurra, mi principal objetivo es trabajar diariamente en páginas web que muestren el valor que puedo ofrecer como programador.</p>
             </div>
