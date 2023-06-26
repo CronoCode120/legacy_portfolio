@@ -1,3 +1,5 @@
+'use client';
+
 import './globals.css';
 import { Quicksand, Comfortaa, Roboto_Mono } from 'next/font/google';
 
@@ -29,19 +31,21 @@ const comfortaa = Comfortaa({
 
 export const metadata = {
   title: 'Cristóbal Tavera',
-  description: 'Portfolio personal, donde expongo mis proyectos de desarrollo web. Puedes conocer un poco sobre mí y contactarme a través de esta página.',
+  description: 'Personal portfolio, where I expose my web development projects. You can know about me and contact me in this page.',
+
 }
 
 export default function RootLayout({ children }) {
+
   return (
-    <html lang="es" className={`${quicksand.variable} ${roboto_mono.variable} ${comfortaa.variable}`}>
+    <html lang='en' className={`${quicksand.variable} ${roboto_mono.variable} ${comfortaa.variable}`}>
       <body>
         {children}
         <footer className='w-fit sm:w-full flex justify-center items-center sm:items-start mx-auto flex-col sm:flex-row mb-20'>
-          <span className='text-gray-300 font-roboto font-light text-xs sm:text-sm text-center mb-4'>Diseñado y programado por Cristóbal Tavera</span>
+          <span className='text-gray-300 font-roboto font-light text-xs sm:text-sm text-center mb-4'>Developed and designed by Cristóbal Tavera</span>
           <span className='sm:ml-2 flex justify-center items-center'>
-            <Link href={'https://www.linkedin.com/in/cristobal-tavera/'} target='_blank' title='Perfil de Linkedin'><FontAwesomeIcon icon={faLinkedin} size='xl'/></Link>
-            <Link href={'https://github.com/CronoCode120'} target='_blank' title='Perfil de Github' className='cursor-pointer ml-2'><FontAwesomeIcon icon={faGithub} size='xl'/></Link>
+            <Link href={'https://www.linkedin.com/in/cristobal-tavera/'} target='_blank' title='Linkedin Profile'><FontAwesomeIcon icon={faLinkedin} size='xl'/></Link>
+            <Link href={'https://github.com/CronoCode120'} target='_blank' title='Github Profile' className='cursor-pointer ml-2'><FontAwesomeIcon icon={faGithub} size='xl'/></Link>
           </span>
         </footer>
       </body>

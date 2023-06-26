@@ -14,7 +14,7 @@ const Project = ({ title, description, image, link, page, usedTechs }) => {
         <Link href={link} target='_blank' className="mb-4 md:mb-0">
             <Image
               src={image}
-              alt="Imagen de la tienda online"
+              alt="Screenshot of the project"
               className="w-[270px] h-auto border-[2px] rounded-md border-gray-700 hover:border-cyan-500 transition-all duration-200"
             />
         </Link>
@@ -32,11 +32,11 @@ const Project = ({ title, description, image, link, page, usedTechs }) => {
           </div>
         </div>
         <Link href={page} target='_blank' className="mr-4 ml-auto flex justify-end">
-          <span className="hover:text-cyan-300 transition-all duration-200">Ver repositorio <FontAwesomeIcon icon={faArrowRight}/></span>
+          <span className="hover:text-cyan-300 transition-all duration-200">See repository <FontAwesomeIcon icon={faArrowRight}/></span>
         </Link>
       </div> 
     </div>
   )
 }
 
-export default Project
+export default Project;

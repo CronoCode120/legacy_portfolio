@@ -17,7 +17,7 @@ export default function Home() {
   const [dots, setDots] = useState('');
 
   let i = 0;
-  const textToType = 'Construyo aplicaciones web accesibles y rápidas que procuren una experiencia óptima al usuario.';
+  const textToType = 'Focused on building fast and accessible web applications that provide an optimal user experience.';
 
   useEffect(() => {
     const span1 = document.getElementById('typedText1');
@@ -26,9 +26,9 @@ export default function Home() {
 
     const typeText = () => {
       if(i < textToType.length) {
-        if(i < 10) {
+        if(i < 40) {
           span1.innerHTML += textToType.charAt(i);
-        } else if(i >= 10 && i <= 25) {
+        } else if(i >= 40 && i <= 55) {
           highlightTxt.innerHTML += textToType.charAt(i);
         } else {
           span2.innerHTML += textToType.charAt(i);
@@ -59,23 +59,23 @@ export default function Home() {
   const projectsData = [
     {
       title: 'Immerse (e-commerce)',
-      description: 'Tienda online ficticia en la que puedes explorar productos, ver sus detalles, añadirlos al carrito e incluso comprarlos.',
+      description: 'Online fictional shop where you can explore products, check their details, add them to a cart and buy them.',
       image: ecommerce,
       link: 'https://online-shop-five-alpha.vercel.app/',
       page: 'https://github.com/CronoCode120/online-shop',
       usedTechs: ['Next.js', 'CSS', 'Sanity', 'Stripe']
     },
     {
-      title: 'ThinkShare (red social)',
-      description: 'Aplicación CRUD similar a una red social donde los usuarios pueden registrarse, crear publicaciones, editar su perfil y reaccionar al contenido de otras personas.',
+      title: 'ThinkShare (social app)',
+      description: 'CRUD application where users can sign up, create posts, modify their profile and react to other users\' content',
       image: social,
       link: 'https://think-share.vercel.app',
       page: 'https://github.com/CronoCode120/thinkShare',
       usedTechs: ['Next.js', 'MongoDB', 'REST API\'s', 'TailwindCSS']
     },
     {
-      title: 'Mi portfolio',
-      description: 'Portfolio personal en el que expongo mis proyectos de desarrollo web.',
+      title: 'My portfolio',
+      description: 'This is the page you are in now.',
       image: portfolio,
       link: 'https://online-shop-five-alpha.vercel.app/',
       page: 'https://github.com/CronoCode120/portfolio',
@@ -91,7 +91,7 @@ export default function Home() {
         <div className="mb-6 relative z-20">
           <h1 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-cyan-500 to-cyan-200 to-[60%] w-[340px] text-transparent bg-clip-text font-comfortaa">Cristóbal Tavera</h1>
         </div>
-        <h2 className="text-[14px] sm:text-xl mb-10 font-roboto text-gray-100 px-4 rounded-full border border-cyan-300 hover:text-gray-950 hover:bg-cyan-300 hover:border-cyan-400 transition-all duration-200">Desarrollador Front End</h2>
+        <h2 className="text-[14px] sm:text-xl mb-10 font-roboto text-gray-100 px-4 rounded-full border border-cyan-300 hover:text-gray-950 hover:bg-cyan-300 hover:border-cyan-400 transition-all duration-200">Front-End Web Developer</h2>
         <p className="w-[65%] max-sm:text-sm lg:w-full text-gray-300 h-[100px] md:h-[50px] xl:h-[20px] font-comfortaa">
           <span id="typedText1"></span>
           <span id="highlightTxt" className="font-semibold bg-gradient-to-r from-cyan-500 to-cyan-200 text-transparent bg-clip-text"></span>
@@ -100,35 +100,35 @@ export default function Home() {
         </p>
         <Fade>
           <div className="text-gray-400 mt-10">
-            <Link href={'https://www.linkedin.com/in/cristobal-tavera/'} target="_blank" title="Mi perfil de Linkedin" className="hover:text-cyan-300 cursor-pointer"><FontAwesomeIcon icon={faLinkedin} size="2xl"/></Link>
-            <Link href={'https://github.com/CronoCode120'} target="_blank" title="Mi perfil de Github" className="hover:text-cyan-300 cursor-pointer ml-6"><FontAwesomeIcon icon={faGithub} size="2xl"/></Link>
+            <Link href={'https://www.linkedin.com/in/cristobal-tavera/'} target="_blank" title="Linkedin Profile" className="hover:text-cyan-300 cursor-pointer"><FontAwesomeIcon icon={faLinkedin} size="2xl"/></Link>
+            <Link href={'https://github.com/CronoCode120'} target="_blank" title="Github Profile" className="hover:text-cyan-300 cursor-pointer ml-6"><FontAwesomeIcon icon={faGithub} size="2xl"/></Link>
           </div>
         </Fade>
-        <a href={'/cv.pdf'} target="_blank"><button type="button" className=" absolute mt-8 bg-cyan-400 text-black max-sm:text-sm font-semibold p-2 rounded-xl font-comfortaa max-sm:shadow-lg max-sm:shadow-cyan-500 hover:shadow-lg hover:shadow-cyan-500 transition-all duration-200 hover:bg-cyan-300">Currículum</button></a>
+        <a href={'/cv.pdf'} target="_blank"><button type="button" className=" absolute mt-8 bg-cyan-400 text-black max-sm:text-sm font-semibold p-2 rounded-xl font-comfortaa max-sm:shadow-lg max-sm:shadow-cyan-500 hover:shadow-lg hover:shadow-cyan-500 transition-all duration-200 hover:bg-cyan-300">Resumé</button></a>
       </header>
-      <section id="about" className="ml-5 sm:ml-6 mr-5 sm:mr-0 md:ml-0 mt-12 md:flex md:justify-evenly md:items-center">
+      <section id="about" className="ml-5 sm:ml-6 mr-5 sm:mr-0 md:ml-0 pt-12 md:flex md:justify-evenly md:items-center">
         <div className="md:w-full flex flex-col justify-center items-start">
-          <h3 className="w-full text-center sm:text-left sm:w-fit mb-6 font-semibold text-xl sm:text-2xl before:content-['<h3>'] before:text-cyan-400 after:content-['</h3>'] after:text-cyan-400 font-roboto w-fit">¿Quién soy?</h3>
+          <h3 className="w-full text-center sm:text-left sm:w-fit mb-6 font-semibold text-xl sm:text-2xl before:content-['<h3>'] before:text-cyan-400 after:content-['</h3>'] after:text-cyan-400 font-roboto w-fit">About me</h3>
           <div className="sm:w-[80%] md:w-full md:flex md:items-start md:justify-center">
             <div className="mb-6 text-gray-300 font-comfortaa md:mr-10">
-              <p className="mb-2 leading-7 max-sm:text-sm">Soy un desarrollador web autodidacta con una gran capacidad de aprendizaje. A pesar de que es el reto más difícil que he afrontado, mis ganas de seguir instruyéndome y convertirme en un mejor programador me han llevado a cultivar estos conocimientos cada día.</p>
-              <p className="mb-2 leading-7 max-sm:text-sm md:text-md">Quiero hacer de esto una profesión cuanto antes para impulsar el desarrollo de mis habilidades y mejorar la calidad de mi trabajo.</p>
-              <p className="leading-7 max-sm:text-sm">Hasta que eso ocurra, mi principal objetivo es trabajar diariamente en páginas web que muestren el valor que puedo ofrecer como programador.</p>
+              <p className="mb-2 leading-7 max-sm:text-sm max-sm:text-center">Self-taught web developer with strong learning aptitudes. Passionate about programming and eager to acquire new skills to keep evolving. Ready to apply my knowledge in a professional environment.</p>
             </div>
             <div className="md:w-[45%] flex flex-col justify-center items-center">
               <Image src={myPic} alt="Este soy yo" className="relative w-[280px] h-[280px] mb-6 aspect-square lg:w-[350px] lg:h-[350px] rounded-2xl bg-white z-20 before:w-full before:h-full before:bg-blue-500 before:absolute before:rounded-2xl before:top-0 before:left-0 before:rotate-[10deg] before:z-[-10]"/>
               <div className="bg-black border border-cyan-300 rounded-2xl p-5 w-[280px] lg:w-[350px] shadow-2xl shadow-cyan-500">
-                <h4 className="font-bold text-lg bg-gradient-to-r from-cyan-400 to-cyan-200 text-transparent bg-clip-text mb-4 font-comfortaa">Tecnologías aprendidas</h4>
+                <h4 className="font-bold text-lg bg-gradient-to-r from-cyan-400 to-cyan-200 text-transparent bg-clip-text mb-4 font-comfortaa">Current stack</h4>
                 <div className="flex justify-between items-center ml-4 text-sm leading-7 font-roboto">
                   <ul className="list-disc">
                     <li>HTML/CSS</li>
                     <li>JavaScript</li>
                     <li>NodeJS</li>
+                    <li>React</li>
                   </ul>
                   <ul className="list-disc">
-                    <li>React</li>
                     <li>TailwindCSS</li>
                     <li>Next.js</li>
+                    <li>MongoDB</li>
+                    <li>ESLint</li>
                   </ul>
                 </div>
               </div>
@@ -138,7 +138,7 @@ export default function Home() {
       </section>
 
       <section id="projects" className="mt-[125px] ml-5 sm:ml-6 mr-5 sm:mr-0 md:ml-0">
-        <h3 className="w-full text-center sm:w-fit sm:text-left mt-8 mb-4 font-semibold text-xl sm:text-2xl before:content-['<h3>'] before:text-cyan-400 after:content-['</h3>'] after:text-cyan-400 font-roboto w-fit">Mis proyectos</h3>
+        <h3 className="w-full text-center sm:w-fit sm:text-left mt-8 mb-4 font-semibold text-xl sm:text-2xl before:content-['<h3>'] before:text-cyan-400 after:content-['</h3>'] after:text-cyan-400 font-roboto w-fit">Projects</h3>
         <div>
           {projectsData.map(({ title, description, image, link, page, usedTechs }) => 
             <Project key={title} title={title} description={description} image={image} link={link} page={page} usedTechs={usedTechs}/>
@@ -150,9 +150,9 @@ export default function Home() {
         </div>
       </section>
       <section id="contact" className="mt-16 ml-5 sm:ml-6 mr-5 sm:mr-0 md:ml-0 sm:w-[75%] md:w-full flex flex-col justify-center items-center mb-20 h-[500px]">
-        <h3 className="text-center w-fit mt-8 mb-4 font-semibold text-xl before:content-['<h3>'] before:text-cyan-400 after:content-['</h3>'] after:text-cyan-400 font-roboto max-sm:text-[16px]">Contacta conmigo</h3>
-        <p className="max-w-[800px] text-center leading-7 text-gray-300 font-comfortaa max-sm:text-sm">Estoy buscando oportunidades para empezar a trabajar y desarrollarme como programador. Si quieres proponerme algo o simplemente saludar, aquí puedes hacerlo.</p>
-        <a href='mailto:ctaverafernandez@gmail.com' className="border border-cyan-300 inline-block p-4 mt-12 mb-4 rounded-md text-cyan-300 hover:translate-y-[-5px] shadow-xl shadow-cyan-500 lg:shadow-none lg:hover:shadow-2xl lg:hover:shadow-cyan-500 transition-all duration-300 font-roboto">Envíame un mensaje</a>
+        <h3 className="text-center w-fit mt-8 mb-4 font-semibold text-xl before:content-['<h3>'] before:text-cyan-400 after:content-['</h3>'] after:text-cyan-400 font-roboto max-sm:text-md">Contact</h3>
+        <p className="max-w-[800px] text-center leading-7 text-gray-300 font-comfortaa max-sm:text-sm">Currently available to apply my skills as a professional. Contact me or propose me anything with the following link.</p>
+        <a href='mailto:ctaverafernandez@gmail.com' className="border border-cyan-300 inline-block p-4 mt-12 mb-4 rounded-md text-cyan-300 hover:translate-y-[-5px] shadow-xl shadow-cyan-500 lg:shadow-none lg:hover:shadow-2xl lg:hover:shadow-cyan-500 transition-all duration-300 font-roboto">Send a message</a>
       </section>
       <Navbar/>
     </div>
