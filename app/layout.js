@@ -1,5 +1,3 @@
-'use client';
-
 import './globals.css';
 import { Quicksand, Comfortaa, Roboto_Mono } from 'next/font/google';
 
