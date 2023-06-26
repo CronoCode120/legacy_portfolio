@@ -114,7 +114,7 @@ export default function Home() {
               <p className="mb-2 leading-7 max-sm:text-sm max-sm:text-center">Self-taught web developer with strong learning aptitudes. Passionate about programming and eager to acquire new skills to keep evolving. Ready to apply my knowledge in a professional environment.</p>
             </div>
             <div className="md:w-[45%] flex flex-col justify-center items-center">
-              <Image src={myPic} alt="Este soy yo" className="relative w-[280px] h-[280px] mb-6 aspect-square lg:w-[350px] lg:h-[350px] rounded-2xl bg-white z-20 before:w-full before:h-full before:bg-blue-500 before:absolute before:rounded-2xl before:top-0 before:left-0 before:rotate-[10deg] before:z-[-10]"/>
+              <Image src={myPic} alt="This is me" className="relative w-[280px] h-[280px] mb-6 aspect-square lg:w-[350px] lg:h-[350px] rounded-2xl bg-white z-20 before:w-full before:h-full before:bg-blue-500 before:absolute before:rounded-2xl before:top-0 before:left-0 before:rotate-[10deg] before:z-[-10]"/>
               <div className="bg-black border border-cyan-300 rounded-2xl p-5 w-[280px] lg:w-[350px] shadow-2xl shadow-cyan-500">
                 <h4 className="font-bold text-lg bg-gradient-to-r from-cyan-400 to-cyan-200 text-transparent bg-clip-text mb-4 font-comfortaa">Current stack</h4>
                 <div className="flex justify-between items-center ml-4 text-sm leading-7 font-roboto">
