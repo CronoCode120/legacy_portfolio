@@ -11,10 +11,11 @@ import myPic from '../public/myPic.png';
 import ecommerce from '../public/ecommerce.png';
 import portfolio from '../public/portfolio.png';
 import social from '../public/social.png';
+import wordle from '../public/wordle.png';
 
 export default function Home() {
 
-  const [dots, setDots] = useState('');
+  // const [dots, setDots] = useState('');
 
   let i = 0;
   const textToType = 'Focused on building fast and accessible web applications that provide an optimal user experience.';
@@ -40,14 +41,14 @@ export default function Home() {
       }
     }
 
-    const intervalId = setInterval(() => {
-      setDots(prevDots => {
-        if(prevDots === '...') return '';
-        if(prevDots === '..') return '...';
-        if(prevDots === '.') return '..';
-        if(prevDots === '') return '.';
-      });
-    }, 500)
+    // const intervalId = setInterval(() => {
+    //   setDots(prevDots => {
+    //     if(prevDots === '...') return '';
+    //     if(prevDots === '..') return '...';
+    //     if(prevDots === '.') return '..';
+    //     if(prevDots === '') return '.';
+    //   });
+    // }, 500)
 
     typeText();
 
@@ -72,6 +73,14 @@ export default function Home() {
       link: 'https://think-share.vercel.app',
       page: 'https://github.com/CronoCode120/thinkShare',
       usedTechs: ['Next.js', 'MongoDB', 'REST API\'s', 'TailwindCSS']
+    },
+    {
+      title: 'Wordle',
+      description: 'A recreation of the Wordle game built with TypeScript.',
+      image: wordle,
+      link: 'https://wordle-zeta-five.vercel.app/',
+      page: 'https://github.com/CronoCode120/wordle',
+      usedTechs: ['Next.js', 'TypeScript', 'ESLint', 'TailwindCSS']
     },
     {
       title: 'My portfolio',
@@ -121,6 +130,7 @@ export default function Home() {
                   <ul className="list-disc">
                     <li>HTML/CSS</li>
                     <li>JavaScript</li>
+                    <li>TypeScript</li>
                     <li>NodeJS</li>
                     <li>React</li>
                   </ul>
