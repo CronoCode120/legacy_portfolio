@@ -12,6 +12,7 @@ import ecommerce from '../public/ecommerce.png';
 import portfolio from '../public/portfolio.png';
 import social from '../public/social.png';
 import wordle from '../public/wordle.png';
+import readlist from '../public/readlist.png';
 
 export default function Home() {
 
@@ -41,7 +42,7 @@ export default function Home() {
       }
     }
 
-    // const intervalId = setInterval(() => {
+    // const dotsInterval = setInterval(() => {
     //   setDots(prevDots => {
     //     if(prevDots === '...') return '';
     //     if(prevDots === '..') return '...';
@@ -52,12 +53,20 @@ export default function Home() {
 
     typeText();
 
-    return () => {
-      clearInterval(intervalId);
-    }
+    // return () => {
+    //   clearInterval(dotsInterval);
+    // }
   }, []);
 
   const projectsData = [
+    {
+      title: 'Reading list',
+      description: 'Explore books from a catalog, look into their individual details and add or remove them to or from your reading list.',
+      image: readlist,
+      link: 'https://readlist-opal.vercel.app/',
+      page: 'https://github.com/CronoCode120/readlist',
+      usedTechs: ['Next.js', 'TypeScript', 'TailwindCSS', 'ESLint']
+    },
     {
       title: 'Immerse (e-commerce)',
       description: 'Online fictional shop where you can explore products, check their details, add them to a cart and buy them.',
